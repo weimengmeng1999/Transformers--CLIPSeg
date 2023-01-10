@@ -1,19 +1,7 @@
-#!/usr/bin/env python
-# coding=utf-8
-# Copyright 2022 The HuggingFace Team All rights reserved.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
 """
+edited Olivia Wei 4-10-2023
+Code for training CLIPSeg model
+
 Training a CLIP like dual encoder models using text and vision encoders in the library.
 
 The script can be used to train CLIP like models for languages other than English by using
@@ -419,7 +407,7 @@ def main():
         config.vision_config.image_size, feature_extractor.image_mean, feature_extractor.image_std
     )
     image_transformations = torch.jit.script(image_transformations)
-    label_transformations=transforms.Resize([224,224])
+    label_transformations=transforms.Resize([224,224]) # size deoends on config.vision_config.image_size
     label_transformations = torch.jit.script(label_transformations)
 
 
@@ -547,21 +535,6 @@ def main():
         metrics = trainer.evaluate()
         trainer.log_metrics("eval", metrics)
         trainer.save_metrics("eval", metrics)
-
-    # 11. Write Training Stats and push to hub.
-    # kwargs = {"finetuned_from": model_args.model_name_or_path, "tasks": "contrastive-image-text-modeling"}
-    # if data_args.dataset_name is not None:
-    #     kwargs["dataset_tags"] = data_args.dataset_name
-    #     if data_args.dataset_config_name is not None:
-    #         kwargs["dataset_args"] = data_args.dataset_config_name
-    #         kwargs["dataset"] = f"{data_args.dataset_name} {data_args.dataset_config_name}"
-    #     else:
-    #         kwargs["dataset"] = data_args.dataset_name
-
-    # if training_args.push_to_hub:
-    #     trainer.push_to_hub(**kwargs)
-    # else:
-    #     trainer.create_model_card(**kwargs)
 
 
 if __name__ == "__main__":
