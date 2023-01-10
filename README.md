@@ -16,7 +16,7 @@ Training stage input:
 - Text prompt (segmentation class name/ segmentation class description)
 Experiment 1.1: Segmentation class name example: ["Bipolar Forceps"]
 Experiment 1.2: Segmentation class description example: 
-[“Bipolar forceps”, “double-action fine curved jaws”, “horizontal serrations”, “medical grade stainless stell”, “Surgical grade material”, “includes a handle”, “includes a dark or grey plastic like cylindrical shaft”, “includes a complex robotic joint for connecting the jaws/handle to the shaft”]
+[“Bipolar forceps with double-action fine curved jaws and horizontal serrations, made by medical grade stainless stell and Surgical grade material, includes a handle and a dark or grey plastic like cylindrical shaft, includes a complex robotic joint for connecting the jaws/handle to the shaft”]
 
 Testing stage:
 
