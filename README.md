@@ -8,7 +8,7 @@ Also some changes in modeling_Clipseg.py
 To run Clipseg, please follow this code:
 
 ```bash
-!python examples/pytorch/contrastive-image-text/run_clipseg.py \
+python examples/pytorch/contrastive-image-text/run_clipseg.py \
   --output_dir "clipseg.." \
   --model_name_or_path "CIDAS/clipseg-rd64-refined" \
   --feature_extractor_name "CIDAS/clipseg-rd64-refined"\
