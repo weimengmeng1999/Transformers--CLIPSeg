@@ -50,7 +50,7 @@ Segmentation class description example is the same as described in experiment 1.
 -Visual prompt 
 Using the visual prompting tips described in the paper, i.e. cropping the image and darkening the background.
 
-![](https://github.com/weimengmeng1999/Transformers--CLIPSeg/blob/main/vp.png)
+![](https://github.com/weimengmeng1999/Transformers--CLIPSeg/blob/main/.png)
 
 Testing stage:
 
