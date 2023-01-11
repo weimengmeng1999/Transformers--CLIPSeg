@@ -5,6 +5,32 @@ For the training file, please go to [/examples/pytorch/contrastive-image-text/ru
 
 Also some changes in modeling_Clipseg.py
 
+To run Clipseg, please follow this code:
+
+```bash
+!python examples/pytorch/contrastive-image-text/run_clipseg.py \
+  --output_dir "clipseg.." \
+  --model_name_or_path "CIDAS/clipseg-rd64-refined" \
+  --feature_extractor_name "CIDAS/clipseg-rd64-refined"\
+  --image_column "image_path" \
+  --caption_column "seg_class_name" \
+  --label_column "mask_path"\
+  --train_file "../train_instruments.json" \
+  --validation_file "../valid_instruments.json"" \
+  --test_file "../test_instruments.json"" \
+  --max_seq_length 77 \
+  --remove_unused_columns=False \
+  --do_train \
+  --per_device_train_batch_size 24 \
+  --per_device_eval_batch_size 24 \
+  --num_train_epochs 400 \
+  --learning_rate "5e-4" \
+  --warmup_steps 0 \
+  --weight_decay 0.1 \
+  --overwrite_output_dir \
+  --report_to none
+```
+
 # CLIPSeg training summary
 
 CLIPSeg is another model that we want to try to leverage the text/visual prompts to help with our instruments segmentation task. The CLIPSeg can be served for: 1) Referring Expression Segmentation; 2) Generalized Zero-Shot Segmentation; 3) One-Shot Semantic Segmentation
